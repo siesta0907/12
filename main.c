@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define N_SIZE 5
-#define N_BINGO 2
+#include "bingoBoard.h"
 
 int main(void){
 	srand((unsigned)time(NULL));
@@ -17,6 +15,8 @@ int main(void){
 	
 	//∞‘¿”
 	while(!isEnd){
+		bingo_init();
+		bingo_printBoard();
 		isEnd = 1;
 	}
 	
