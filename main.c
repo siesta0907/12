@@ -17,6 +17,8 @@ int main(void){
 	while(!isEnd){
 		bingo_init();
 		bingo_printBoard();
+		bingo_inputNum(3);
+		bingo_printBoard();
 		isEnd = 1;
 	}
 	
