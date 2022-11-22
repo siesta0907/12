@@ -24,7 +24,7 @@ int main(void){
 		bingo_printBoard();
 		if (bingo_countCompletedLine() >= N_BINGO) isEnd = 1;
 	}
-	//엔딩
+	//엔딩 
 	printf("********************************************\n");
 	printf("              CONGRATULATION\n");
 	printf("********************************************\n");

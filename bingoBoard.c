@@ -13,12 +13,28 @@ static int numberStatus[N_SIZE*N_SIZE];
 
 //빙고 생성함 
 void bingo_init(void){
-	int i, j ,cnt = 1;
-	for (i =0; i<N_SIZE; i++){
-		for (j = 0; j<N_SIZE; j++){
-			bingoBoard[i][j] = cnt;
-			numberStatus[cnt-1] = N_SIZE*i+j;
-			cnt++;
+	int i, j ,cnt = 0;
+	int randNum;
+	int maxNum = N_SIZE*N_SIZE;
+	
+	for (i=0; i<maxNum; i++){
+		numberStatus[i] = 0;
+	}
+	
+	for (i =0; i< N_SIZE; i++){
+		for (j = 0; j< N_SIZE; j++){
+			while(1){
+				//1~25사이의 랜덤 
+				randNum = (rand()%(maxNum))+1;
+				
+				//할당되지 않은  것 
+				if ((numberStatus[randNum-1])==0){
+					bingoBoard[i][j] = randNum;
+					numberStatus[randNum-1] = N_SIZE*i+j;
+					printf("%d\n", randNum); 
+					break; 
+				}
+			}
 		}
 	}
 }
